@@ -62,7 +62,7 @@ class Net(nn.Module):
         x = x.view(x.size(0), -1)
         x = F.relu(self.lin1(x))
         x = F.relu(self.lin2(x))
-        x = F.sigmoid(self.lin3(x))
+        x = self.lin3(x)
         
         # a modified x, having gone through all the layers of your model, should be returned
         return x
